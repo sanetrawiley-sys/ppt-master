@@ -8,12 +8,19 @@
 
 <p align="center">
   <a href="https://trendshift.io/repositories/25760?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-25760" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/25760" alt="hugohe3%2Fppt-master | Trendshift" width="250" height="55"/></a>
+  <a href="https://www.star-history.com/hugohe3/ppt-master"><picture><source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/badge?repo=hugohe3/ppt-master&type=trending&theme=dark" /><img alt="GitHub Trending Repository of the Day" src="https://api.star-history.com/badge?repo=hugohe3/ppt-master&type=trending" width="198" height="55" /></picture></a>
 </p>
 
 [English](./README.md) | 中文
 
+## ❤️ 赞助
+
+本项目由 <a href="https://www.kimi.com/code/?aff=ppt-master">Kimi</a>、<a href="https://www.packyapi.ai/register?aff=ppt-master">PackyCode</a>、<a href="https://apikey.fun/register?aff=PPT-MASTER">APIKEY.FUN</a>、<a href="https://runapi.host/register?aff=WMLJ">RunAPI</a>、<a href="https://www.compshare.cn/coding-plan?ytag=GPU_YY-git_pptmaster0624">优云智算</a> 等赞助方支持，得以持续免费开源。
+
+> **[想出现在这里？](SPONSORING_CN.md)**
+
 <details open>
-<summary>本项目由 <a href="https://www.kimi.com/code/?aff=ppt-master">Kimi</a>、<a href="https://www.packyapi.ai/register?aff=ppt-master">PackyCode</a>、<a href="https://apikey.fun/register?aff=PPT-MASTER">APIKEY.FUN</a>、<a href="https://runapi.host/register?aff=WMLJ">RunAPI</a>、<a href="https://www.compshare.cn/coding-plan?ytag=GPU_YY-git_pptmaster0624">优云智算</a> 等赞助方支持，得以持续免费开源。</summary>
+<summary>点击收起</summary>
 
 <p align="center">
   <a href="https://www.kimi.com/code/?aff=ppt-master"><img src="https://gcdn.moonshot.cn/growth-cdn/sponsor/kimi-zh.png" alt="Kimi" width="100%"></a>
@@ -49,66 +56,35 @@
 > **可编辑早已是及格线——真正拉开差距的是原生深度。** PPT Master 交给你的是一份真正的 PowerPoint：母版、原生形状、数据驱动的图表与表格，而不是一堆扁平文本框，也不是套模板填空的结果。它还不止把幻灯片排得好看——先替你把逻辑理顺，再谈视觉；而这份原生深度在**持续向 PowerPoint 本身靠拢**，逐版本补齐更多原生能力。形态上，它是一套在有 Agent 能力的 AI 工具里运行的工作流：把你的主题或材料交给 AI，就在你本机生成，数据不出本地，不锁定任何平台和模型。工作原理与能力边界 → [产品定位](#产品定位)。
 
 <p align="center">
-  <a href="https://hugohe3.github.io/ppt-master/"><strong>在线预览</strong></a> ·
-  <a href="./examples/"><strong>示例下载</strong></a> ·
+  <a href="#快速开始"><strong>快速开始</strong></a> ·
+  <a href="https://hugohe3.github.io/ppt-master-examples/"><strong>在线预览</strong></a> ·
+  <a href="https://github.com/hugohe3/ppt-master-examples"><strong>示例下载</strong></a> ·
   <a href="./docs/zh/faq.md"><strong>常见问题</strong></a> ·
   <a href="./docs/zh/roadmap.md"><strong>路线图</strong></a>
 </p>
 
-<p align="center">
-  <sub>下方的旁白 deck 与画廊示例均生成于 <strong>2026 年 5 月</strong>，模型为 Claude Opus 4.7 + <code>gpt-image-2</code>，每份都是一次性生成、未经精修。</sub>
-</p>
-
-<h3 align="center">下载这份<a href="https://raw.githubusercontent.com/hugohe3/ppt-master/main/examples/ppt169_attention_is_all_you_need/exports/attention_is_all_you_need_narrated.pptx">带音频旁白的 <em>Attention Is All You Need</em> 论文精读 deck</a>，在 PowerPoint 里直接放映，每一页都会自己"读"给你听 —— 这只是 PPT Master 能力的冰山一角。</h3>
-
 <table>
   <tr>
     <td align="center" width="33%">
-      <a href="https://hugohe3.github.io/ppt-master/viewer.html?project=ppt169_pritzker_2026"><img src="docs/assets/screenshots/preview_pritzker_2026.png" alt="杂志风 — 普利兹克奖 2026" /></a><br/>
-      <sub><b>杂志风</b> — 建筑摄影 + 排版网格，冷静克制的编辑感<br/>
-      <a href="https://hugohe3.github.io/ppt-master/viewer.html?project=ppt169_pritzker_2026">在线翻页</a> · <a href="https://raw.githubusercontent.com/hugohe3/ppt-master/main/examples/ppt169_pritzker_2026/exports/pritzker_2026.pptx">下载 .pptx</a></sub>
+      <a href="https://hugohe3.github.io/ppt-master-examples/viewer.html?project=ppt169_pixel_breakfast_atlas"><img src="docs/assets/screenshots/preview_pixel_breakfast_atlas.webp" alt="像素风 — 中国早餐图鉴" /></a><br/>
+      <sub><b>像素风</b> — 中国早餐图鉴：AI 像素元素表切片、HUD 面板、Morph 转场与 8-bit 音效</sub>
     </td>
     <td align="center" width="33%">
-      <a href="https://hugohe3.github.io/ppt-master/viewer.html?project=ppt169_global_ai_capital_2026"><img src="docs/assets/screenshots/preview_global_ai_capital.png" alt="新闻风 — 2026 全球 AI 资本格局" /></a><br/>
-      <sub><b>新闻 / 财经数据风</b> — 深色仪表盘，图表驱动，彭博风<br/>
-      <a href="https://hugohe3.github.io/ppt-master/viewer.html?project=ppt169_global_ai_capital_2026">在线翻页</a> · <a href="https://raw.githubusercontent.com/hugohe3/ppt-master/main/examples/ppt169_global_ai_capital_2026/exports/global_ai_capital_2026.pptx">下载 .pptx</a></sub>
+      <a href="https://hugohe3.github.io/ppt-master-examples/viewer.html?project=ppt169_attention_is_all_you_need"><img src="docs/assets/screenshots/preview_attention_is_all_you_need.webp" alt="技术蓝图 — Attention Is All You Need" /></a><br/>
+      <sub><b>技术蓝图</b> — Transformer 论文深读：结构图、原生公式、备注与动画</sub>
     </td>
     <td align="center" width="33%">
-      <a href="https://hugohe3.github.io/ppt-master/viewer.html?project=ppt169_swiss_grid_systems"><img src="docs/assets/screenshots/preview_swiss_grid.png" alt="瑞士风 — 网格系统入门" /></a><br/>
-      <sub><b>瑞士风</b> — 严格栅格，克制字体，红色点缀<br/>
-      <a href="https://hugohe3.github.io/ppt-master/viewer.html?project=ppt169_swiss_grid_systems">在线翻页</a> · <a href="https://raw.githubusercontent.com/hugohe3/ppt-master/main/examples/ppt169_swiss_grid_systems/exports/swiss_grid_systems.pptx">下载 .pptx</a></sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="33%">
-      <a href="https://hugohe3.github.io/ppt-master/viewer.html?project=ppt169_glassmorphism_demo"><img src="docs/assets/screenshots/preview_glassmorphism_demo.png" alt="毛玻璃风 — AI Agent 工程化 Demo" /></a><br/>
-      <sub><b>毛玻璃 SaaS</b> — 半透明叠层，渐变景深，产品 UI 感<br/>
-      <a href="https://hugohe3.github.io/ppt-master/viewer.html?project=ppt169_glassmorphism_demo">在线翻页</a> · <a href="https://raw.githubusercontent.com/hugohe3/ppt-master/main/examples/ppt169_glassmorphism_demo/exports/glassmorphism_demo.pptx">下载 .pptx</a></sub>
-    </td>
-    <td align="center" width="33%">
-      <a href="https://hugohe3.github.io/ppt-master/viewer.html?project=ppt169_sugar_rush_memphis"><img src="docs/assets/screenshots/preview_sugar_rush_memphis.png" alt="孟菲斯风 — Sugar Rush 音乐节" /></a><br/>
-      <sub><b>孟菲斯波普</b> — 高饱和原色，几何图形，俏皮活力<br/>
-      <a href="https://hugohe3.github.io/ppt-master/viewer.html?project=ppt169_sugar_rush_memphis">在线翻页</a> · <a href="https://raw.githubusercontent.com/hugohe3/ppt-master/main/examples/ppt169_sugar_rush_memphis/exports/sugar_rush_memphis.pptx">下载 .pptx</a></sub>
-    </td>
-    <td align="center" width="33%">
-      <a href="https://hugohe3.github.io/ppt-master/viewer.html?project=ppt169_indie_bookstore_zine_guide"><img src="docs/assets/screenshots/preview_indie_bookstore_zine.png" alt="Zine 风 — 独立书店指南" /></a><br/>
-      <sub><b>Risograph Zine</b> — 双色印刷质感，手作书店文化<br/>
-      <a href="https://hugohe3.github.io/ppt-master/viewer.html?project=ppt169_indie_bookstore_zine_guide">在线翻页</a> · <a href="https://raw.githubusercontent.com/hugohe3/ppt-master/main/examples/ppt169_indie_bookstore_zine_guide/exports/indie_bookstore_zine_guide.pptx">下载 .pptx</a></sub>
+      <a href="https://hugohe3.github.io/ppt-master-examples/viewer.html?project=ppt169_china_telecom_2025"><img src="docs/assets/screenshots/preview_china_telecom_2025.webp" alt="品牌模板 — 中国电信 2025 年业绩解读" /></a><br/>
+      <sub><b>品牌模板</b> — 套用中国电信自有 Deck 模板的业绩汇报，另附原生图表导出版</sub>
     </td>
   </tr>
 </table>
 
 <p align="center">
-  <sub>下载任意一份 .pptx 在 PowerPoint 里打开，是感受真实产出水平最快的方式。<br/><a href="https://hugohe3.github.io/ppt-master/">在线翻看全部示例 →</a> · <a href="./examples/"><code>examples/</code> 目录</a> · <a href="./docs/zh/why-ppt-master.md">为什么选 PPT Master？</a></sub>
-</p>
-
-<p align="center">
-  更多端到端实例：<a href="https://space.bilibili.com/111258938/lists/8144072"><strong>合集·PPT-Master 能力展示</strong></a>（B 站）
+  <sub>每份示例都是一次性生成、未经精修；下载任意一份 .pptx 在 PowerPoint 里打开，是感受真实产出水平最快的方式。<br/><a href="https://hugohe3.github.io/ppt-master-examples/">在线翻看全部示例 →</a> · <a href="https://github.com/hugohe3/ppt-master-examples">示例仓库</a> · <a href="./docs/zh/why-ppt-master.md">为什么选 PPT Master？</a></sub>
 </p>
 
 ---
-
-丢进原材料，拿回的不是一张能改的静态版面，而是**一份带完整 PowerPoint 行为的成品**：原生页间转场、可按需开启的入场动画（默认关闭）、演讲者备注一键合成音频旁白乃至视频、图表和表格可作为带数据的原生对象导出，也能沿用你自己的 PPT 模板来设计——直接拿去讲，回头还能接着改。每项能力怎么用 → [快速入门](./docs/zh/getting-started.md)。
 
 ## 产品定位
 
@@ -118,7 +94,7 @@
 
 形态上，它是一套在有 Agent 能力的 AI 工具里运行的工作流（一个 "skill"）：你在对话框里说"用这份 PDF 做一份 PPT"，它就按流程在你本机生成、导出原生可编辑的 `.pptx`。你不写任何代码，只做三件事——装 Python、装一个 AI 工具、把材料放进来。
 
-从源材料生成新 deck 是主管线，但不是唯一路线：PPT Master 还能从你的参考资料中提炼可复用的品牌 / 风格 / 版式 / 成品模板，把新内容填进你已有的 `.pptx` 并保留其设计，或为成品 deck 追加原生转场、动画和旁白——每条路线都有明确的保留契约。
+从源材料生成新 deck 是主管线，但不是唯一路线：PPT Master 还能从你的参考资料中提炼可复用的品牌 / 风格 / 版式 / 成品模板，把新内容填进你已有的 `.pptx` 并保留其设计，或为成品 deck 追加原生转场、动画和旁白——每条路线都有明确的保留契约。每项能力怎么用 → [快速入门](./docs/zh/getting-started.md)。
 
 在这份原生深度之上，这个形态还带来三个承诺：
 
@@ -132,7 +108,7 @@
 > ### 这是一个工具，不是一个许愿池
 > `harness + model = agent`——PPT Master 只负责工作流，产出上限由模型决定。推荐 **Kimi K3（或 Claude）大上下文窗口（~100 万 token）+ AI 生图（`gpt-image-2` 或 Google `gemini-3.1-flash-image`）**；其他模型能跑通流程，但有质量差距。
 >
-> 也别指望一把就拿到完美成品。它的价值是帮你把大部分枯燥的活儿干掉，剩下的打磨交给你——做原生可编辑的 PPT，本就是为了让你接着改，而不是甩给你一张改不动的图。模型越便宜，要补的人工就越多；效果不理想，先升级模型，再对照[快速入门](./docs/zh/getting-started.md)和示例工程检查用法。
+> 也别指望一把就拿到完美成品。它的价值是帮你把大部分枯燥的活儿干掉，剩下的打磨交给你——做原生可编辑的 PPT，本就是为了让你接着改，而不是甩给你一张改不动的图。模型越便宜，要补的人工就越多；效果不理想，先升级模型，再对照[快速入门](./docs/zh/getting-started.md)和[示例工程](https://hugohe3.github.io/ppt-master-examples/)检查用法。
 
 ---
 
@@ -337,9 +313,9 @@ AI 全程处理——内容分析、视觉设计、SVG 生成、PPTX 导出。
 
 你明确提的照做，你没提的由 AI 直接定，不再回来问你。它仍会转换来源、补齐事实、应用共享视觉基线，并按需使用图片 / 图标 / 原生形状 / 图表 / 表格 / PowerPoint 原生行内或块级公式——省掉的是交互与持久规划，不是 PPT 能力。它是不可续接的一次性生成，也不会产生 `svg_final/` 预览。完整说明 → [快速模式](./docs/zh/getting-started.md#快速模式)。
 
-> **输出说明：** SVG 管线统一由项目转换器读取 `svg_output/`，生成可直接编辑的原生 DrawingML `.pptx`，保存至 `exports/<name>_<timestamp>.pptx`。默认 Generate 流程会运行 `finalize_svg.py` 并生成自包含预览 `svg_final/`；PowerPoint 手工“转换为形状”不在支持范围。用户可显式启用[快速生成](./skills/ppt-master/workflows/profiles/quick-generate.md)：它跳过 Strategist、确认、`design_spec.md`、`spec_lock.md` 与 `finalize_svg.py`——你明确提出的要求照做，你没提的由 Agent 在一次有效上下文中直接决定；仍按需转换来源、研究事实缺口、应用共享 mode / visual style / 美学规范、准备图片 / 图标，并把公式直接创作为原生行内或块级 marker，同时考虑原生形状与数据可视化，随后按规范手写 SVG，通过无锁的 Quick 最终质量检查，再导出最终 PPTX。它不写替代计划，上下文丢失后不能续接。公式 marker 会把 LaTeX payload 编译为 PowerPoint 2010+ 可编辑 OMML；块级 group 与行内 `<tspan>` run 都保留普通 SVG 预览，导出时将其替换。Keynote、WPS、LibreOffice 等非 PowerPoint 客户端的公式显示与编辑能力不在支持合同内。原生图表 / 表格替换、讲稿、动效、旁白和诊断等普通导出能力仍可按需使用；讲稿、自定义对象动画和旁白默认关闭，Agent 可在用户要求或 deck 确有需要时启用。Quick 使用默认输出路径时仍会生成普通 postflight 报告，并把 `svg_output/` 镜像到 `backup/<timestamp>/svg_output/`；显式指定输出路径时沿用普通流程不创建备份的行为。图表和表格默认导出为 SVG 派生、可逐形状编辑的 DrawingML 对象，优先保证 PowerPoint / Keynote / WPS 间的视觉一致性；可加 `--native-charts-and-tables`，把符合合同的组替换为带数据源和对象专属编辑能力的 PowerPoint 原生 Chart/Table 对象，跨软件渲染可能略有差异，保存为 `exports/<name>_<timestamp>_native_charts_tables.pptx`。这两种图表/表格导出变体都可编辑，区别在于 PowerPoint 对象模型，而不是“能否编辑”。
+> **输出说明：** 成品保存为 `exports/<name>_<timestamp>.pptx`，是可直接编辑的原生 DrawingML；默认流程还会在 `svg_final/` 生成自包含的页面预览。图表和表格默认导出为可逐形状编辑的对象；加 `--native-charts-and-tables` 可得到带数据源、支持**编辑数据**的 PowerPoint 原生 Chart / Table 对象，另存为 `_native_charts_tables.pptx`。公式编译为 PowerPoint 2010+ 可编辑的 OMML。备份、备注 / 动画 / 旁白开关，以及非 PowerPoint 客户端的边界 → [常见问题](./docs/zh/faq.md)。
 
-> **已有一份想复用的 `.pptx`？** 把那份 deck 连同素材给 AI，说「套模板」即可——它会把新内容（文字、表格、图表数据）填进你现有的设计，只导出你挑选的页面，且保持原生可编辑。详见 [常见问题](./docs/zh/faq.md) 与 [套模板工作流](./skills/ppt-master/workflows/template-fill-pptx.md)。
+> **已有一份想复用的 `.pptx`？** 把 deck 连同素材给 AI，说「套模板」即可——Edit Native PPTX 会保留原设计，逐字节保留未改页面，只编辑选中页面，支持选页/重排，并可添加讲稿或旁白。详见 [常见问题](./docs/zh/faq.md) 与 [工作流](./skills/ppt-master/workflows/edit-native-pptx.md)。
 
 > **遇到问题？** AI 迷失上下文时，让它先读 `skills/ppt-master/SKILL.md`；其他问题查看 **[常见问题](./docs/zh/faq.md)** — 涵盖模型选择、排版问题、导出异常等，基于真实用户反馈持续更新。
 
@@ -380,7 +356,7 @@ PPT Master 会优先读取当前进程环境变量，然后按顺序读取第一
 | 📖 | [SKILL.md](./skills/ppt-master/SKILL.md) | 核心流程与规则 |
 | 📐 | [画布格式](./skills/ppt-master/references/canvas-formats.md) | PPT 16:9、小红书、朋友圈等 10+ 种格式 |
 | 🛠️ | [脚本与工具](./skills/ppt-master/scripts/README.md) | 所有脚本和命令 |
-| 💼 | [示例](./examples/README.md) | 所有示例项目 |
+| 💼 | [示例](https://hugohe3.github.io/ppt-master-examples/) | 所有示例项目 |
 | 🏗️ | [技术路线](./docs/zh/technical-design.md) | 架构、设计哲学、为什么选 SVG |
 | ❓ | [常见问题](./docs/zh/faq.md) | 模型选择、费用、排版问题排查、自定义模板 |
 
@@ -415,6 +391,18 @@ PPT Master 会优先读取当前进程环境变量，然后按顺序读取第一
 
 ---
 
+## Star History
+
+<a href="https://star-history.com/#hugohe3/ppt-master&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=hugohe3/ppt-master&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=hugohe3/ppt-master&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=hugohe3/ppt-master&type=Date" />
+ </picture>
+</a>
+
+---
+
 ## 赞助与支持
 
 PPT Master 目前主要由我开发维护。每个新模板、Bug 修复、文档更新都需要持续的资源投入，目前由以下赞助方和个人支持者共同分担。
@@ -432,6 +420,8 @@ PPT Master 目前主要由我开发维护。每个新模板、Bug 修复、文�
 <a href="https://www.compshare.cn/coding-plan?ytag=GPU_YY-git_pptmaster0624"><img src="docs/assets/sponsors/youyun.png" alt="优云智算" height="40" /></a>
 &nbsp;
 <a href="https://m.do.co/c/547f129aabe1"><img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/PoweredByDO/DO_Powered_by_Badge_blue.svg" alt="Powered by DigitalOcean" height="40" /></a>
+
+**[想出现在这里？→](SPONSORING_CN.md)** —— 展示位置、受众数据与价格。
 
 **个人赞助**
 

@@ -5,15 +5,22 @@ This directory is used for storing in-progress projects.
 ## Create a New Project
 
 ```bash
-python3 skills/ppt-master/scripts/project_manager.py init my_project --format ppt169
+# Defer the canvas to authoring:
+python3 skills/ppt-master/scripts/project_manager.py init my_project
+# Or record an exact registered canvas:
+python3 skills/ppt-master/scripts/project_manager.py init my_widescreen --format ppt169
 ```
+
+Pass `--format` only when the canvas exactly matches a registered format. If it
+is omitted, the canvas is determined during authoring and recorded in
+`spec_lock.md` for Default Generate or by the first SVG for Quick Generate.
 
 ## Directory Structure
 
 A typical project usually contains the following:
 
 ```
-project_name_format_YYYYMMDD/
+project_name[_registered_format]_YYYYMMDD/
 ├── README.md
 ├── design_spec.md
 ├── sources/
@@ -36,6 +43,8 @@ project_name_format_YYYYMMDD/
     └── *.pptx                    # Native DrawingML deliverables
 ```
 
+The optional format token appears only when `init` receives `--format`.
+
 Projects can remain at different stages and do not necessarily have all artifacts at once. For example:
 
 - Only `sources/` archiving and the Design Specification & Content Outline (design_spec) are complete
@@ -46,5 +55,5 @@ Projects can remain at different stages and do not necessarily have all artifact
 
 - Contents under this directory are excluded by `.gitignore`
 - `svg_final/` may be opened directly or inserted manually as an SVG image; PowerPoint's manual Convert to Shape behavior is not supported
-- Completed projects can be moved to the `examples/` directory for sharing
+- Completed projects can be published through the [PPT Master examples repository](https://github.com/hugohe3/ppt-master-examples)
 - Files outside the workspace are copied by default; files within the workspace are moved directly to the project's `sources/`

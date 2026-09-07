@@ -8,13 +8,22 @@ and transform authoring contracts.
 from __future__ import annotations
 
 import colorsys
+import json
 import math
 import re
 import unicodedata
 from collections import Counter
 from collections.abc import Iterator
 from decimal import Decimal, ROUND_HALF_UP
+from pathlib import Path
 from xml.etree import ElementTree as ET
+
+from pptx_gradients import (
+    NATIVE_GRADIENT_ATTR,
+    NATIVE_GRADIENT_PREVIEW_SHA256_ATTR,
+    NATIVE_GRADIENT_SHA256_ATTR,
+    preserved_native_gradient_xml,
+)
 
 from pptx_shapes import (
     OOXML_COORDINATE_MAX,
@@ -1463,6 +1472,36 @@ def parse_inline_style(style_str: str | None) -> dict[str, str]:
     return styles
 
 
+def svg_hidden_reason(
+    element: ET.Element,
+    parent_by_id: dict[int, ET.Element],
+    *,
+    preserve_native_carriers: bool = False,
+) -> str | None:
+    """Resolve display suppression and inherited visibility, including overrides."""
+    visibility = None
+    current: ET.Element | None = element
+    while current is not None:
+        styles = parse_inline_style(current.get('style'))
+        display = styles.get('display', current.get('display', '')).strip().lower()
+        if display == 'none':
+            return 'display:none'
+        native_carrier = (
+            preserve_native_carriers
+            and current is element
+            and current.get('data-pptx-part') == 'geometry'
+            and current.get('data-pptx-object') in {'shape', 'connector'}
+        )
+        if visibility is None and not native_carrier:
+            value = styles.get('visibility', current.get('visibility', '')).strip().lower()
+            if value and value not in {'inherit', 'unset'}:
+                visibility = value
+        current = parent_by_id.get(id(current))
+    if visibility in {'hidden', 'collapse'}:
+        return f'visibility:{visibility}'
+    return None
+
+
 def iter_project_geometry_lengths(
     root: ET.Element,
 ) -> Iterator[tuple[ET.Element, str, str, str]]:
@@ -2143,6 +2182,17 @@ def project_marker_errors(root: ET.Element) -> list[str]:
             else:
                 marker_channel = 'fill'
                 marker_paint = marker_fill
+            gradient_id = resolve_url_id(stroke_value)
+            gradient = definitions.get(gradient_id) if gradient_id else None
+            if gradient is not None:
+                try:
+                    native_gradient = preserved_native_gradient_xml(gradient)
+                except ValueError:
+                    native_gradient = None
+                if native_gradient is not None:
+                    # The original DrawingML line owns both gradient stroke
+                    # and arrowhead paint; the solid SVG marker is its preview.
+                    continue
             stroke_color, _stroke_alpha = parse_svg_color(stroke_value or '')
             marker_color, _marker_alpha = parse_svg_color(marker_paint)
             if stroke_color is None or marker_color is None:
@@ -2408,6 +2458,21 @@ def project_gradient_errors(root: ET.Element) -> list[str]:
             continue
         gradient_id = gradient.get('id')
         label = f'<{tag} id="{gradient_id}">' if gradient_id else f'<{tag}>'
+        if any(
+            gradient.get(name) is not None
+            for name in (
+                NATIVE_GRADIENT_ATTR,
+                NATIVE_GRADIENT_SHA256_ATTR,
+                NATIVE_GRADIENT_PREVIEW_SHA256_ATTR,
+            )
+        ):
+            try:
+                native = preserved_native_gradient_xml(gradient)
+            except ValueError as exc:
+                errors.add(f'{label} has invalid imported gradient payload: {exc}')
+                continue
+            if native is not None:
+                continue
         attribute_names = {
             name.rsplit('}', 1)[-1]
             for name in gradient.attrib
@@ -3129,7 +3194,10 @@ def parse_font_family(font_family_str: str) -> dict[str, str]:
     """Parse CSS font-family into latin/ea typeface names.
 
     Prioritizes Windows-available fonts since PPTX is primarily opened on
-    Windows. macOS/Linux-only fonts are mapped via FONT_FALLBACK_WIN.
+    Windows. macOS/Linux-only fonts are mapped via FONT_FALLBACK_WIN. The
+    first named Latin face fills ``latin`` and the first named CJK face fills
+    ``ea``; a CJK face also serves ``latin`` when no named Latin face exists,
+    and a generic family fills ``latin`` only when it precedes every named face.
     """
     if not font_family_str:
         return {'latin': 'Segoe UI', 'ea': 'Microsoft YaHei'}
@@ -3142,8 +3210,11 @@ def parse_font_family(font_family_str: str) -> dict[str, str]:
         if font in SYSTEM_FONTS:
             continue
         if font in GENERIC_FONT_MAP:
-            resolved = GENERIC_FONT_MAP[font]
-            latin_font = latin_font or resolved
+            # A generic family only fills the Latin slot when it precedes
+            # every named face: a trailing ``sans-serif`` after a named CJK
+            # face must not pull that run's Latin glyphs onto another face.
+            if latin_font is None and ea_font is None:
+                latin_font = GENERIC_FONT_MAP[font]
             continue
 
         win_font = FONT_FALLBACK_WIN.get(font, font)
@@ -3496,6 +3567,11 @@ def resolve_text_run_fonts(text: str, fonts: dict[str, str]) -> dict[str, str]:
 
 
 def _estimate_character_width(ch: str, font_size: float) -> float:
+    if (
+        0xFF00 <= ord(ch) <= 0xFFEF
+        and unicodedata.east_asian_width(ch) == 'H'
+    ):
+        return font_size * 0.5
     if is_cjk_char(ch):
         return font_size
     if ch == ' ':
@@ -3527,18 +3603,60 @@ def _estimate_grapheme_width(cluster: str, font_size: float) -> float:
     return max(_estimate_character_width(ch, font_size) for ch in bases)
 
 
+_FONT_ADVANCES_CACHE = None
+
+
+def primary_font_family(font_family: str | None) -> str:
+    """Normalize the first family in a font stack."""
+    return str(font_family or '').split(',')[0].strip().strip('\'"').lower()
+
+
+def get_font_advances(
+    font_family: str | None,
+    font_weight: str = '400',
+    font_style: str = 'normal',
+) -> dict[str, float] | None:
+    """Return bundled glyph advances for the primary family and style."""
+    family = primary_font_family(font_family)
+    if not family:
+        return None
+
+    global _FONT_ADVANCES_CACHE
+    if _FONT_ADVANCES_CACHE is None:
+        with Path(__file__).with_name('font_advances.json').open(encoding='utf-8') as handle:
+            _FONT_ADVANCES_CACHE = json.load(handle)['families']
+
+    bold = font_weight in ('bold', '600', '700', '800', '900')
+    italic = font_style in ('italic', 'oblique')
+    style = 'bold' if bold else 'regular'
+    if italic:
+        style = 'bold-italic' if bold else 'italic'
+    entry = _FONT_ADVANCES_CACHE.get(family, {}).get(style)
+    return entry['advances'] if entry is not None else None
+
+
 def estimate_text_cluster_widths(
     text: str,
     font_size: float,
     font_weight: str = '400',
+    *,
+    font_family: str | None = None,
+    font_style: str = 'normal',
 ) -> list[float]:
     """Estimate each project text cluster without inserting tracking."""
-    widths = [
-        _estimate_grapheme_width(cluster, font_size)
-        for cluster in split_project_text_clusters(text)
-    ]
-    if font_weight in ('bold', '600', '700', '800', '900'):
-        widths = [width * 1.05 for width in widths]
+    advances = get_font_advances(font_family, font_weight, font_style)
+    bold = font_weight in ('bold', '600', '700', '800', '900')
+    widths = []
+    for cluster in split_project_text_clusters(text):
+        cjk = any(is_cjk_char(ch) for ch in cluster)
+        if advances is not None and not cjk and all(
+            ch in advances and not _is_emoji_base(ch) and not _is_grapheme_extend(ch)
+            for ch in cluster
+        ):
+            widths.append(sum(advances[ch] for ch in cluster) * font_size)
+            continue
+        width = _estimate_grapheme_width(cluster, font_size)
+        widths.append(width * 1.05 if bold and not cjk else width)
     return widths
 
 

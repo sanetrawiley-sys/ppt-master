@@ -126,25 +126,26 @@ audio/video workflows because they require media or bookmark targets.
 
 ## Add Sound After Choosing Motion
 
-Sound effects are off by default. PPT Master includes a global CC0 discovery
+Sound effects are off by default. PPT Master includes a global CC0 sound
 library, but it is not copied during strategy or ordinary project setup. First
 finish the SVG pages and choose the visual transition/object motion. Only when
-one of those resolved beats has a specific auditory job should you discover and
-sync a cue:
+one of those resolved beats has a specific auditory job should you read the
+complete objective [sound vocabulary](../skills/ppt-master/templates/sounds/sound-vocabulary.md),
+select one exact id, and sync the cue:
 
 ```bash
-python3 skills/ppt-master/scripts/sound_sync.py list --query whoosh
 python3 skills/ppt-master/scripts/sound_sync.py \
   <project> bigsoundbank/1797 kenney-interface/click_001
 ```
 
-The second command copies only the selected files into
+The command copies only the selected files into
 `<project>/sounds/<namespace>/`. With no selected cue, PPT Master creates no
-project sound directory and copies nothing. The `recommended` catalog flag is
-a discovery shortlist, not an automatic choice:
+project sound directory and copies nothing. After reviewing the vocabulary,
+the CLI may narrow an already-considered label, tag, or context without deciding
+fit:
 
 ```bash
-python3 skills/ppt-master/scripts/sound_sync.py list --query recommended
+python3 skills/ppt-master/scripts/sound_sync.py list --query whoosh
 ```
 
 Configuration always references the copied project-local path, never the
@@ -271,7 +272,7 @@ PPT Master validates animation settings strictly: unknown effects or Start modes
 | Static structure | Backgrounds, Master/Layout content, placeholders, and page chrome remain static |
 | Unsupported object builds | No paragraph/text-range builds, custom freeform motion-path authoring, native Chart/SmartArt build sequencing, or media playback commands are inferred from grouped SVG content |
 | Output route | Animation exists in the native PPTX generated from `svg_output/`; `svg_final/` is a static preview |
-| Existing PPTX routes | Template Fill and Native Enhance preserve source object animation rather than translating it into this generated-deck model |
+| Edit Native PPTX | Preserves source object animation through the round-trip workspace rather than translating it into this generated-deck model |
 | PPTX-to-SVG import | Reconstructs only current-registry rows with exact native duration and unique top-level group targets; advanced/build/media timing remains diagnosed |
 | Playback compatibility | Microsoft PowerPoint desktop is the primary validation target; Keynote, WPS, LibreOffice, and older Office versions may remap or omit individual effects |
 

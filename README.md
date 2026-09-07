@@ -8,12 +8,19 @@
 
 <p align="center">
   <a href="https://trendshift.io/repositories/25760?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-25760" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/25760" alt="hugohe3%2Fppt-master | Trendshift" width="250" height="55"/></a>
+  <a href="https://www.star-history.com/hugohe3/ppt-master"><picture><source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/badge?repo=hugohe3/ppt-master&type=trending&theme=dark" /><img alt="GitHub Trending Repository of the Day" src="https://api.star-history.com/badge?repo=hugohe3/ppt-master&type=trending" width="198" height="55" /></picture></a>
 </p>
 
 English | [中文](./README_CN.md)
 
+## ❤️ Sponsors
+
+This project is kept free and open source with the support of <a href="https://www.kimi.com/code/?aff=ppt-master">Kimi</a>, <a href="https://www.packyapi.ai/register?aff=ppt-master">PackyCode</a>, <a href="https://apikey.fun/register?aff=PPT-MASTER">APIKEY.FUN</a>, <a href="https://runapi.host/register?aff=WMLJ">RunAPI</a>, <a href="https://www.compshare.cn/coding-plan?ytag=GPU_YY-git_pptmaster0624">YouYun ZhiSuan</a> and other sponsors.
+
+> **[Want to appear here?](SPONSORING.md)**
+
 <details open>
-<summary>This project is kept free and open source with the support of <a href="https://www.kimi.com/code/?aff=ppt-master">Kimi</a>, <a href="https://www.packyapi.ai/register?aff=ppt-master">PackyCode</a>, <a href="https://apikey.fun/register?aff=PPT-MASTER">APIKEY.FUN</a>, <a href="https://runapi.host/register?aff=WMLJ">RunAPI</a>, <a href="https://www.compshare.cn/coding-plan?ytag=GPU_YY-git_pptmaster0624">YouYun ZhiSuan</a> and other sponsors.</summary>
+<summary>Click to collapse</summary>
 
 <p align="center">
   <a href="https://www.kimi.com/code/?aff=ppt-master"><img src="https://gcdn.moonshot.cn/growth-cdn/sponsor/kimi-en.png" alt="Kimi" width="100%"></a>
@@ -49,62 +56,35 @@ Thanks to [Kimi](https://www.kimi.com/code/?aff=ppt-master) for sponsoring this 
 > **Editable is already table stakes — what sets PPT Master apart is native depth.** It hands you a real PowerPoint: slide masters, native shapes, data-backed charts and tables — not flat text boxes, and not a filled-in template. It also does more than lay slides out nicely — it reasons the argument into shape first, then designs; and that native depth keeps **converging with PowerPoint itself**, adding more of its native capabilities release after release. In form, it's a workflow that runs inside any agent-capable AI tool: hand the AI your topic or material, and it generates on your machine — your data stays local, no platform or model lock-in. How it works and where the limits are → [Product Positioning](#product-positioning).
 
 <p align="center">
-  <a href="https://hugohe3.github.io/ppt-master/"><strong>Live Demo</strong></a> ·
-  <a href="./examples/"><strong>Examples</strong></a> ·
+  <a href="#quick-start"><strong>Quick Start</strong></a> ·
+  <a href="https://hugohe3.github.io/ppt-master-examples/"><strong>Live Demo</strong></a> ·
+  <a href="https://github.com/hugohe3/ppt-master-examples"><strong>Examples</strong></a> ·
   <a href="./docs/faq.md"><strong>FAQ</strong></a> ·
   <a href="./docs/roadmap.md"><strong>Roadmap</strong></a>
 </p>
 
-<p align="center">
-  <sub>The narrated deck and gallery below were generated in <strong>May 2026</strong> with Claude Opus 4.7 + <code>gpt-image-2</code> — one pass each, no manual polish.</sub>
-</p>
-
-<h3 align="center">Download the <a href="https://raw.githubusercontent.com/hugohe3/ppt-master/main/examples/ppt169_attention_is_all_you_need/exports/attention_is_all_you_need_narrated.pptx">narrated <em>Attention Is All You Need</em> deck</a> — play it in PowerPoint and every slide reads itself out loud. That's just the tip of what PPT Master can do.</h3>
-
 <table>
   <tr>
     <td align="center" width="33%">
-      <a href="https://hugohe3.github.io/ppt-master/viewer.html?project=ppt169_pritzker_2026"><img src="docs/assets/screenshots/preview_pritzker_2026.png" alt="Editorial magazine — Pritzker 2026 architecture review" /></a><br/>
-      <sub><b>Editorial Magazine</b> — architecture photography, calm typographic grid<br/>
-      <a href="https://hugohe3.github.io/ppt-master/viewer.html?project=ppt169_pritzker_2026">Flip online</a> · <a href="https://raw.githubusercontent.com/hugohe3/ppt-master/main/examples/ppt169_pritzker_2026/exports/pritzker_2026.pptx">Download .pptx</a></sub>
+      <a href="https://hugohe3.github.io/ppt-master-examples/viewer.html?project=ppt169_pixel_breakfast_atlas"><img src="docs/assets/screenshots/preview_pixel_breakfast_atlas.webp" alt="Pixel art — Chinese breakfast atlas" /></a><br/>
+      <sub><b>Pixel Art</b> — Chinese breakfast atlas: AI sprite sheets, HUD panels, Morph and 8-bit sound cues</sub>
     </td>
     <td align="center" width="33%">
-      <a href="https://hugohe3.github.io/ppt-master/viewer.html?project=ppt169_global_ai_capital_2026"><img src="docs/assets/screenshots/preview_global_ai_capital.png" alt="Data journalism — Global AI Capital 2026" /></a><br/>
-      <sub><b>Data Journalism</b> — Bloomberg-style dark dashboard, chart-driven<br/>
-      <a href="https://hugohe3.github.io/ppt-master/viewer.html?project=ppt169_global_ai_capital_2026">Flip online</a> · <a href="https://raw.githubusercontent.com/hugohe3/ppt-master/main/examples/ppt169_global_ai_capital_2026/exports/global_ai_capital_2026.pptx">Download .pptx</a></sub>
+      <a href="https://hugohe3.github.io/ppt-master-examples/viewer.html?project=ppt169_attention_is_all_you_need"><img src="docs/assets/screenshots/preview_attention_is_all_you_need.webp" alt="Technical blueprint — Attention Is All You Need" /></a><br/>
+      <sub><b>Technical Blueprint</b> — Transformer paper walkthrough: diagrams, native formulas, notes and animations</sub>
     </td>
     <td align="center" width="33%">
-      <a href="https://hugohe3.github.io/ppt-master/viewer.html?project=ppt169_swiss_grid_systems"><img src="docs/assets/screenshots/preview_swiss_grid.png" alt="Swiss typographic grid — Grid Systems primer" /></a><br/>
-      <sub><b>Swiss Grid</b> — strict modular grid, restrained type, red-accent<br/>
-      <a href="https://hugohe3.github.io/ppt-master/viewer.html?project=ppt169_swiss_grid_systems">Flip online</a> · <a href="https://raw.githubusercontent.com/hugohe3/ppt-master/main/examples/ppt169_swiss_grid_systems/exports/swiss_grid_systems.pptx">Download .pptx</a></sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="33%">
-      <a href="https://hugohe3.github.io/ppt-master/viewer.html?project=ppt169_glassmorphism_demo"><img src="docs/assets/screenshots/preview_glassmorphism_demo.png" alt="Glassmorphism SaaS — AI Agent engineering demo" /></a><br/>
-      <sub><b>Glassmorphism SaaS</b> — translucent layers, gradient depth, product UI<br/>
-      <a href="https://hugohe3.github.io/ppt-master/viewer.html?project=ppt169_glassmorphism_demo">Flip online</a> · <a href="https://raw.githubusercontent.com/hugohe3/ppt-master/main/examples/ppt169_glassmorphism_demo/exports/glassmorphism_demo.pptx">Download .pptx</a></sub>
-    </td>
-    <td align="center" width="33%">
-      <a href="https://hugohe3.github.io/ppt-master/viewer.html?project=ppt169_sugar_rush_memphis"><img src="docs/assets/screenshots/preview_sugar_rush_memphis.png" alt="Memphis pop — Sugar Rush festival" /></a><br/>
-      <sub><b>Memphis Pop</b> — bold primaries, geometric patterns, playful energy<br/>
-      <a href="https://hugohe3.github.io/ppt-master/viewer.html?project=ppt169_sugar_rush_memphis">Flip online</a> · <a href="https://raw.githubusercontent.com/hugohe3/ppt-master/main/examples/ppt169_sugar_rush_memphis/exports/sugar_rush_memphis.pptx">Download .pptx</a></sub>
-    </td>
-    <td align="center" width="33%">
-      <a href="https://hugohe3.github.io/ppt-master/viewer.html?project=ppt169_indie_bookstore_zine_guide"><img src="docs/assets/screenshots/preview_indie_bookstore_zine.png" alt="Risograph zine — Indie bookstore guide" /></a><br/>
-      <sub><b>Risograph Zine</b> — duotone print, hand-made bookstore-culture feel<br/>
-      <a href="https://hugohe3.github.io/ppt-master/viewer.html?project=ppt169_indie_bookstore_zine_guide">Flip online</a> · <a href="https://raw.githubusercontent.com/hugohe3/ppt-master/main/examples/ppt169_indie_bookstore_zine_guide/exports/indie_bookstore_zine_guide.pptx">Download .pptx</a></sub>
+      <a href="https://hugohe3.github.io/ppt-master-examples/viewer.html?project=ppt169_china_telecom_2025"><img src="docs/assets/screenshots/preview_china_telecom_2025.webp" alt="Brand template — China Telecom 2025 results" /></a><br/>
+      <sub><b>Brand Template</b> — China Telecom 2025 results on the company's own deck template, with a native-chart export</sub>
     </td>
   </tr>
 </table>
 
 <p align="center">
-  <sub>Downloading any .pptx and opening it in PowerPoint is the fastest way to see what it can really do.<br/><a href="https://hugohe3.github.io/ppt-master/">Flip through all examples online →</a> · <a href="./examples/"><code>examples/</code> directory</a> · <a href="./docs/why-ppt-master.md">Why PPT Master?</a></sub>
+  <sub>Every example is a single pass with no manual polish; downloading a .pptx and opening it in PowerPoint is the fastest way to see what it can really do.<br/><a href="https://hugohe3.github.io/ppt-master-examples/">Flip through all examples online →</a> · <a href="https://github.com/hugohe3/ppt-master-examples">Source repository</a> · <a href="./docs/why-ppt-master.md">Why PPT Master?</a></sub>
 </p>
 
 ---
-
-Drop in your source material, and what you get back isn't a static layout you can edit — it's **a complete deck with real PowerPoint behavior**: native slide transitions, opt-in entrance / emphasis / motion-path / exit animations (off by default), speaker notes that can become audio narration and even video, charts and tables that can ship as real data-backed PowerPoint objects, and it can follow your own PPT template — present it as-is, and keep refining. How to use each capability → [Getting Started](./docs/getting-started.md).
 
 ## Product Positioning
 
@@ -114,7 +94,7 @@ And that depth is a **direction of travel, not a fixed checklist.** PPT Master's
 
 In form, it's a workflow (a "skill") that runs inside any agent-capable AI tool: tell it in chat — "make a deck from this PDF" — and it runs the workflow on your machine and exports a natively editable `.pptx`. No coding on your side; you do exactly three things — install Python, install an AI tool, drop in your material.
 
-Generating a new deck from source documents is the main pipeline, but not the only route. PPT Master can also distill reusable brand / style / layout / deck templates from your references, fill an existing `.pptx` with new content while preserving its design, and add native transitions, animations, and narration to a finished deck — each route with an explicit contract for what gets preserved.
+Generating a new deck from source documents is the main pipeline, but not the only route. PPT Master can also distill reusable brand / style / layout / deck templates from your references, fill an existing `.pptx` with new content while preserving its design, and add native transitions, animations, and narration to a finished deck — each route with an explicit contract for what gets preserved. How to use each capability → [Getting Started](./docs/getting-started.md).
 
 On top of that native depth, this form comes with three promises:
 
@@ -128,7 +108,7 @@ Why you'd choose it, and where it isn't the right fit → [Why PPT Master](./doc
 > ### This is a tool, not a wishing well
 > `harness + model = agent` — PPT Master only owns the workflow; the model sets the ceiling. Recommended: **Kimi K3 (or Claude) with a large context window (~1M tokens) + AI image generation (`gpt-image-2` or Google `gemini-3.1-flash-image`)**; other models can run the pipeline, with a quality gap.
 >
-> And don't expect a finished, perfect deck in one shot. The tool's value is taking most of the tedious work off your plate; the polishing that's left is yours — a natively editable deck exists precisely so you can keep working on it, not a flat image you can't touch. The cheaper the model, the more there is to do; if results disappoint, upgrade the model first, then check your usage against [Getting Started](./docs/getting-started.md) and the example projects.
+> And don't expect a finished, perfect deck in one shot. The tool's value is taking most of the tedious work off your plate; the polishing that's left is yours — a natively editable deck exists precisely so you can keep working on it, not a flat image you can't touch. The cheaper the model, the more there is to do; if results disappoint, upgrade the model first, then check your usage against [Getting Started](./docs/getting-started.md) and the [example projects](https://hugohe3.github.io/ppt-master-examples/).
 
 ---
 
@@ -328,9 +308,9 @@ You: Quickly generate a 5-page deck from projects/q3-report/sources/report.pdf �
 
 Whatever you state explicitly is followed; whatever you leave unspecified the agent decides on its own instead of asking. It still converts sources, fills factual gaps, applies the shared visual baseline, and uses images/icons/native shapes/charts/tables/PowerPoint-native inline or block formulas as needed — it drops interaction and durable planning, not presentation capability. It is one-pass and non-resumable, and there is no `svg_final/` preview. Full guide → [Quick mode](./docs/getting-started.md#quick-mode).
 
-> **Output:** The SVG pipeline has one PPTX converter: it reads `svg_output/` and writes a directly editable native DrawingML deck to `exports/<name>_<timestamp>.pptx`. The default Generate flow runs `finalize_svg.py` and produces self-contained previews in `svg_final/`; PowerPoint's manual **Convert to Shape** command is outside the supported contract. Explicit [quick generation](./skills/ppt-master/workflows/profiles/quick-generate.md) skips Strategist, confirmation, `design_spec.md`, `spec_lock.md`, and `finalize_svg.py`: whatever you state explicitly is followed, and whatever you leave unspecified the agent decides directly in one active context. It still converts sources, researches factual gaps, applies shared mode/style/aesthetic guidance, prepares required images/icons, authors formulas as native inline or block markers, considers native shapes and data visualizations, hand-authors SVG, passes the lockless Quick final quality check, and exports the final PPTX. It writes no substitute plan and cannot resume after context loss. Formula markers compile their LaTeX payload to editable OMML for PowerPoint 2010+; block groups and inline `<tspan>` runs keep ordinary SVG previews that are replaced during export. Formula rendering and editability in Keynote, WPS, LibreOffice, and other non-PowerPoint clients are not part of this contract. Ordinary export capabilities remain available as needed, including native chart/table replacement, notes, motion, narration, and diagnostics; notes, custom object animation, and narration start off, and the agent may enable them when the request or deck needs them. A default-path Quick export writes the normal postflight report and snapshots `svg_output/` to `backup/<timestamp>/svg_output/`; an explicit output path keeps the ordinary no-backup behavior. By default charts and tables export as individually editable SVG-derived DrawingML shapes, which prioritize cross-app visual consistency. Pass `--native-charts-and-tables` to replace eligible groups with PowerPoint-native Chart/Table objects backed by data, which provide **Edit Data** and object-specific controls but may render differently across apps; this variant is saved as `exports/<name>_<timestamp>_native_charts_tables.pptx`. Both chart/table export variants are editable—the distinction is the PowerPoint object model, not editability itself.
+> **Output:** the deck lands in `exports/<name>_<timestamp>.pptx` as natively editable DrawingML; the default flow also writes self-contained page previews to `svg_final/`. Charts and tables ship as editable shapes by default; pass `--native-charts-and-tables` for data-backed PowerPoint Chart / Table objects with **Edit Data**, saved as a separate `_native_charts_tables.pptx`. Formulas compile to editable OMML for PowerPoint 2010+. Backups, notes, animation and narration switches, and the non-PowerPoint boundaries → [FAQ](./docs/faq.md).
 
-> **Already have a `.pptx` you want to reuse?** Hand the AI that deck plus your material and ask it to "fill this deck with the new content" — it fills text, table, and chart data into your existing design and exports only the pages you pick, staying natively editable. See the [FAQ](./docs/faq.md) and [template-fill workflow](./skills/ppt-master/workflows/template-fill-pptx.md).
+> **Already have a `.pptx` you want to reuse?** Give the AI the deck and material and ask it to "fill this deck with the new content" — Edit Native PPTX keeps the design and unchanged pages byte-for-byte, edits chosen pages, supports selection/reordering, and can add notes or narration. See the [FAQ](./docs/faq.md) and [workflow](./skills/ppt-master/workflows/edit-native-pptx.md).
 
 > **Something went wrong?** If the AI loses context, ask it to read `skills/ppt-master/SKILL.md`; for everything else, check the **[FAQ](./docs/faq.md)** — it covers model selection, layout issues, export problems, and more. Continuously updated from real user reports.
 
@@ -371,7 +351,7 @@ PPT Master reads the current process environment first, then the first `.env` fo
 | 📖 | [SKILL.md](./skills/ppt-master/SKILL.md) | Core workflow and rules |
 | 📐 | [Canvas Formats](./skills/ppt-master/references/canvas-formats.md) | PPT 16:9, Xiaohongshu, WeChat, and 10+ formats |
 | 🛠️ | [Scripts & Tools](./skills/ppt-master/scripts/README.md) | All scripts and commands |
-| 💼 | [Examples](./examples/README.md) | All example projects |
+| 💼 | [Examples](https://hugohe3.github.io/ppt-master-examples/) | All example projects |
 | 🏗️ | [Technical Design](./docs/technical-design.md) | Architecture, design philosophy, why SVG |
 | ❓ | [FAQ](./docs/faq.md) | Model selection, cost, layout troubleshooting, custom templates |
 
@@ -406,6 +386,18 @@ Looking to collaborate, integrate PPT Master into your workflow, or just have qu
 
 ---
 
+## Star History
+
+<a href="https://star-history.com/#hugohe3/ppt-master&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=hugohe3/ppt-master&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=hugohe3/ppt-master&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=hugohe3/ppt-master&type=Date" />
+ </picture>
+</a>
+
+---
+
 ## Sponsors & Support
 
 PPT Master is currently built and maintained primarily by me. Every new template, bug fix, and documentation update takes ongoing resources — currently shared by the sponsors and individual supporters below.
@@ -423,6 +415,8 @@ PPT Master is currently built and maintained primarily by me. Every new template
 <a href="https://www.compshare.cn/coding-plan?ytag=GPU_YY-git_pptmaster0624"><img src="docs/assets/sponsors/youyun.png" alt="YouYun ZhiSuan" height="40" /></a>
 &nbsp;
 <a href="https://m.do.co/c/547f129aabe1"><img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/PoweredByDO/DO_Powered_by_Badge_blue.svg" alt="Powered by DigitalOcean" height="40" /></a>
+
+**[Want to appear here? →](SPONSORING.md)** — placements, audience and rates.
 
 **Individual support**
 

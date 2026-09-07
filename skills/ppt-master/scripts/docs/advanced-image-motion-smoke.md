@@ -12,7 +12,7 @@ The fixture deliberately closes the full planning and execution chain:
 
 - `design_spec.md` carries `Motion suggestion`, one current §VIII image row,
   and `Crop Policy`, with no native-shape planning field;
-- `spec_lock.md` projects that row with optional layout pattern `#M1-11`;
+- `spec_lock.md` projects that row (`source`, `crop`); the `#M1-11` image pattern stays in §VIII;
 - both pages reuse one raster through ordinary, ellipse-preset, and custom-path
   independent nested crops;
 - `animations.json` pairs the main crop across adjacent Morph pages;
@@ -133,7 +133,7 @@ preset = (
 
 ## VIII. Image Resource List
 
-| Filename | Dimensions | Ratio | Purpose | Type | Layout pattern | Crop Policy | Acquire Via | Status | Reference | text_policy | page_role |
+| Filename | Dimensions | Ratio | Purpose | Type | Image pattern | Crop Policy | Acquire Via | Status | Reference | text_policy | page_role |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | scene.png | 1280x720 | 16:9 | Morph crop continuity | Photo | #M1-11 same-source independent crops with a shaped detail | adaptive | user | Existing | Synthetic three-band scene for crop and Morph verification | none | local |
 
@@ -198,7 +198,7 @@ preset = (
 - library: none
 - inventory: none
 ## images
-- scene: images/scene.png | source=user | pattern=#M1-11 same-source independent crops with a shaped detail | crop=adaptive
+- scene: images/scene.png | source=user | crop=adaptive
 ## page_rhythm
 - P01: dense
 - P02: dense
@@ -299,7 +299,15 @@ slide_2 = """<svg xmlns="http://www.w3.org/2000/svg"
 )
 
 run_tool("project_manager.py", "validate", project)
-run_tool("svg_quality_checker.py", project, "--format", "ppt169")
+run_tool(
+    "svg_quality_checker.py",
+    project,
+    "--format",
+    "ppt169",
+    "--stage",
+    "final",
+    "--json",
+)
 run_tool("animation_config.py", "validate", project)
 
 

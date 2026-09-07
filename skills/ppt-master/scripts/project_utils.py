@@ -177,13 +177,15 @@ def get_project_info(project_path: str) -> Dict:
         Project information dictionary
     """
     project_path = Path(project_path)
+    # ``.`` or ``..`` carry no name of their own; parse the real directory name.
+    dir_name = project_path.resolve().name
 
     # Parse directory name
-    parsed = parse_project_name(project_path.name)
+    parsed = parse_project_name(dir_name)
 
     info = {
         'path': str(project_path),
-        'dir_name': project_path.name,
+        'dir_name': dir_name,
         'name': parsed['name'],
         'format': parsed['format'],
         'format_name': parsed['format_name'],
@@ -342,6 +344,7 @@ def validate_communication_trace(
         return errors
 
     missing_moves = []
+    missing_relationships = []
     for index, slide_match in enumerate(slide_matches):
         block_end = (
             slide_matches[index + 1].start()
@@ -355,11 +358,23 @@ def validate_communication_trace(
             flags=re.IGNORECASE | re.MULTILINE,
         ) is None:
             missing_moves.append(slide_match.group(1))
+        if re.search(
+            r'^[ \t]*-[ \t]+(?:\*\*)?Relationships(?:\*\*)?[ \t]*:',
+            slide_block,
+            flags=re.IGNORECASE | re.MULTILINE,
+        ) is None:
+            missing_relationships.append(slide_match.group(1))
     if missing_moves:
         errors.append(
             'Communication trace: every design_spec.md §IX Slide block must '
             'contain an Audience move line; missing on Slide '
             f'{", ".join(missing_moves)}.',
+        )
+    if missing_relationships:
+        errors.append(
+            'Communication trace: every design_spec.md §IX Slide block must '
+            'contain a Relationships line; missing on Slide '
+            f'{", ".join(missing_relationships)}.',
         )
     return errors
 
@@ -407,11 +422,11 @@ def validate_project_structure(
 
     # Check required files
     if not (project_path / 'README.md').exists():
-        msg = "Missing required file: README.md"
+        msg = "Missing README.md (optional project notes; nothing reads it)"
         if use_helper and verbose:
             msg += "\n" + ErrorHelper.format_error_message('missing_readme',
                                                            {'project_path': str(project_path)})
-        errors.append(msg)
+        warnings.append(msg)
 
     # Check design specification file
     has_spec = any((project_path / name).exists() for name in _DESIGN_SPEC_NAMES)
@@ -452,13 +467,13 @@ def validate_project_structure(
                                                                        {'file_name': svg_file.name})
                     warnings.append(msg)
 
-    # Check directory naming format
-    dir_name = project_path.name
+    # Check directory naming format (``.`` has no name of its own)
+    dir_name = project_path.resolve().name
     if not re.search(r'_\d{8}$', dir_name):
         msg = f"Directory name missing date suffix (_YYYYMMDD): {dir_name}"
         if use_helper and verbose:
             msg += "\n" + \
-                ErrorHelper.format_error_message('missing_date_suffix')
+                ErrorHelper.format_error_message('missing_project_date')
         warnings.append(msg)
 
     is_valid = len(errors) == 0
