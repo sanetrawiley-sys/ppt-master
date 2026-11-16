@@ -76,7 +76,7 @@ python3 skills/ppt-master/scripts/update_repo.py
 可以。完整仓库确实很大（Git 历史，加上内置的示例 deck 及其素材），而且这个体积是写进历史里的——在不破坏已有大量 fork 的前提下没法瘦身。如果你只想要 skill、不需要完整仓库，用下面的轻量方式：
 
 - **Marketplace CLI**：`npx skills add hugohe3/ppt-master`，或 Claude Code 里的 `/plugin install`，都只拉取 skill 文件（见 [README 的「3. 配置项目」一节](../../README_CN.md#3-配置项目)）。
-- **手动下载**：到 [Releases](https://github.com/hugohe3/ppt-master/releases) 页面下载 `ppt-master-skill-*.zip`——只含 skill 文件（约 56 MB），无需 clone 完整仓库。
+- **手动下载**：到 [Releases](https://github.com/hugohe3/ppt-master/releases) 页面下载 `ppt-master-skill-*.zip`——只含 skill 文件（约 23 MB），无需 clone 完整仓库。
 
 两种 skill-only 方式装好后，找到同时包含 `SKILL.md` 与 `requirements.txt` 的 skill 安装目录，再运行 `python3 -m pip install -r "<installed-skill-dir>/requirements.txt"`，后处理脚本才能工作。
 
@@ -266,11 +266,9 @@ python3 skills/ppt-master/scripts/svg_to_pptx.py <project> -a auto --animation-t
 
 ## Q: 推荐用什么 AI 模型？
 
-**Claude**（Opus / Sonnet）是推荐且测试最充分的模型。SVG 排版本质上是在绝对坐标系中做精确的数学计算（字号 x 字数 x 容器宽度），Claude 在这方面表现明显优于其他模型。
+推荐使用 **[Kimi K3.1](https://www.kimi.com/code/?aff=ppt-master)** 或 **Gemini**（搭配 ~100 万 token 大上下文窗口）驱动工作流。SVG 排版需要在绝对坐标系中完成精确的几何与字号度量计算（字号 × 字数 × 容器宽度），同时把前序页面留在同一上下文里以保持整份演示文稿的视觉一致性。
 
-**GPT 系列**早期版本排版问题较多——文字超出容器、元素错位、坐标计算失误。较新的版本（如 GPT-5.5）在这方面已有明显进步，实际效果可以接受；如果遇到问题，可以告知 AI 修正具体页面。
-
-其他模型（Gemini、GLM、MiniMax 等）效果参差不齐。总体来说，前端/视觉能力越强的模型，生成效果越好。
+其他旗舰模型（如 **GPT**、**Claude** 等）同样可以驱动流程。较早期或较小参数的模型更容易出现文字溢出容器、元素错位或坐标偏差；遇到单页排版问题时，可以告知 AI 修正对应页面，或切换至更强的模型。
 
 ## Q: 有人说 PPT Master "只是个玩具"——这个评价准确吗？
 
@@ -278,12 +276,12 @@ python3 skills/ppt-master/scripts/svg_to_pptx.py <project> -a auto --animation-t
 
 **发挥完整实力的组合：**
 
-- **Claude 大上下文窗口**（推荐 ~100 万 token 级别）：大上下文让 Executor 在同一个会话里看到全部已生成页面，在不拆分运行的前提下保持整份 deck 的视觉一致性。上下文不足时被迫走拆分模式，两段之间会出现明显的风格漂移。
-- **AI 生图，推荐 `gpt-image-2.5-sunburst`**（或同等质量）：配图水平是 deck 整体观感的最大变量。用占位级的网络图片和用真正贴合内容的 AI 生成图，视觉效果完全是两个量级。
+- **Kimi K3.1（或 Gemini）大上下文窗口**（推荐 ~100 万 token 级别）：大上下文让 Executor 在同一个会话里看到全部已生成页面，在不拆分运行的前提下保持整份 deck 的视觉一致性。上下文不足时被迫走拆分模式，两段之间会出现明显的风格漂移。
+- **AI 生图，推荐 `gpt-image-2.6-sunburst` 或 `gemini-nano-banana-2.1`**：配图水平是 deck 整体观感的最大变量。用占位级的网络图片和用真正贴合内容的 AI 生成图，视觉效果完全是两个量级。
 
-如果你看到的效果差强人意，先对照以下几点检查你的配置，再下结论：用的什么模型？上下文开了多大？有没有接入图片生成 API？同样的工作流，Claude Opus 配 100 万 token 上下文配 `gpt-image-2.5-sunburst` 的结果，和小参数开源模型配零配置的结果，是截然不同的体验。
+如果你看到的效果差强人意，先对照以下几点检查你的配置，再下结论：用的什么模型？上下文开了多大？有没有接入图片生成 API？同样的工作流，Kimi K3.1（或 Gemini）配 100 万 token 上下文再配 `gpt-image-2.6-sunburst` / `gemini-nano-banana-2.1` 的结果，和小参数开源模型配零配置的结果，是截然不同的体验。
 
-> **没有 Claude 渠道？** 本项目赞助商 [PackyCode](https://www.packyapi.ai/register?aff=ppt-master)、[APIKEY.FAN](https://apikey.fan/register?aff=PPT-MASTER)、[RunAPI](https://runapi.host/register?aff=WMLJ) 与 [ModelGo](https://modelgo.ai/?utm_source=ppt-master&utm_medium=sponsorship&utm_content=readme03&campaign_id=ppt-master-github&ad_group_id=readme03) 均提供 Claude 及其他主流模型的按量付费接入——无需订阅，支持国内支付，开箱即用。各家专属优惠见 [README](../../README_CN.md)。
+> **还没有模型接入渠道？** 用 Kimi K3.1 可直接选本项目赞助商 [Kimi Code](https://www.kimi.com/code/?aff=ppt-master)；想按量调用 Gemini、GPT、Claude 等多家主流模型，赞助商 [PackyCode](https://www.packyapi.ai/register?aff=ppt-master)、[APIKEY.FAN](https://apikey.fan/register?aff=PPT-MASTER)、[RunAPI](https://runapi.host/register?aff=WMLJ) 与 [ModelGo](https://modelgo.ai/?utm_source=ppt-master&utm_medium=sponsorship&utm_content=readme03&campaign_id=ppt-master-github&ad_group_id=readme03) 均提供无需订阅、支持国内支付的聚合接入服务。各家专属优惠见 [README](../../README_CN.md)。
 
 最后再说一句：这是一个免费、个人维护的开源项目。合用就用，能帮到你我很高兴；不合用，换个工具就好。真诚的反馈与建议始终欢迎——这也是项目一点点变好的方式。
 
